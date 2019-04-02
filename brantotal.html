@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset=”UTF-8″>
+   <script type="text/javascript" src="C:\Users\kimchaeyeon\projects\js\jquery-3.3.1.js"></script>
+  </head>
+  <style>
+   .solution_area{
+           text-align: center;
+   }
+   .list_area li{
+         list-style: none;  
+         float: left;
+         margin-left: -25px;
+   }
+   .solution_all{
+           position: absolute;
+    width: 960px;
+    height: 290px;
+    border: 1px solid #9e9e9e;
+    top: 0px;
+    border-radius: 290px;
+   }
+    .list_area fclear{
+        display: inline-block;
+    }
+    .circle_area{
+        width: 240px;
+    height: 240px;
+    display: table;
+    border-radius: 100%;
+    }
+    .solution_all span{
+     position: absolute;
+     top: -40px;
+     left: 50%;
+     margin-left: -105px;
+     display: inline-block;
+     padding: 0 25px;
+     background: #fff;
+     font-size: 16px;
+     color: #222;
+     font-weight: 900;
+    }
+    .clear_line{
+     width: 1px;
+     height: 50px;
+     border-right: 1px dashed #9e9e9e;
+     margin: 3px auto;
+    }
+    .circle_inner{
+     margin-top: 85px;
+    }
+    .solution_exp{
+     font-size: 12px;
+     padding: 10px;
+     color:#fff;
+    }
+    .solution_name{
+     font-size: 18px;
+     color:#fff;
+    }
+  </style>
+    <style>
+  .spacer s2{
+    min-height: 200px;
+  }
+  .spacer{
+      text-align: center;
+    min-height: 100px;
+  }
+  .blue{
+          background-color: #3883d8;
+  }
+  .box1 {
+    min-width: 100px;
+    height: 100px;
+    margin: 0 auto 0 auto;
+}
+.show-on-scroll { visibility: hidden; }
+.show-on-scroll.shown { visibility: visible; }
+  </style>
+  <body>
+    <div class="solution_area">
+                        <div class="solution_all" style="opacity: 1;"><span>abocado</br>브랜드 토탈 솔루션</span></div>
+                            <ul class="list_area fclear">
+                                <li class="solution_list1" style="opacity: 0.85;">
+                                    <div class="circle_area" style="background-color:#4891e7;">
+                                        <div class="circle_inner">
+                                            <div class="solution_name">브랜드 컨설팅</div>
+                                            <div class="etc_dot"></div>
+                                            <div class="solution_exp">온라인 영상 통화 컨설팅<br>서비스입니다.</div>
+                                        </div>
+                                    </div>
+                                    <div class="clear_line"></div>
+                                    <div class="clear_dot"></div>
+                                    <div class="solution_desc">
+                                        브랜드, 사업에 대한<br>해답을 찾고 싶어요
+                                    </div>
+                                </li>
+                                <li class="solution_list2" style="opacity: 0.85;">
+                                    <div class="circle_area" style="background-color: #fc9f9f;">
+                                        <div class="circle_inner">
+                                            <div class="solution_name">브랜드 네이밍</div>
+                                            <div class="etc_dot"></div>
+                                            <div class="solution_exp">온라인 영상 통화 컨설팅<br>서비스입니다.</div>
+                                        </div>
+                                    </div>
+                                    <div class="clear_line"></div>
+                                    <div class="clear_dot"></div>
+                                    <div class="solution_desc">
+                                        사업에 꼭 맞는 브랜드<br>이름이 필요해요
+                                    </div>
+                                </li>
+                                <li class="solution_list3" style="opacity: 0.85;">
+                                    <div class="circle_area" style="background-color: #00cf7f;">
+                                        <div class="circle_inner">
+                                            <div class="solution_name">브랜드 로고</div>
+                                            <div class="etc_dot"></div>
+                                            <div class="solution_exp">온라인 영상 통화 컨설팅<br>서비스입니다.</div>
+                                        </div>
+                                    </div>
+                                    <div class="clear_line"></div>
+                                    <div class="clear_dot"></div>
+                                    <div class="solution_desc">
+                                        브랜드 로고를 디자인 하고<br>싶어요
+                                    </div>
+                                </li>
+                                <li class="solution_list4" style="opacity: 0.85;">
+                                    <div class="circle_area" style="background-color:saddlebrown;">
+                                        <div class="circle_inner">
+                                            <div class="solution_name">맞춤형 디자인</div>
+                                            <div class="etc_dot"></div>
+                                            <div class="solution_exp">온라인 영상 통화 컨설팅<br>서비스입니다.</div>
+                                        </div>
+                                    </div>
+                                    <div class="clear_line"></div>
+                                    <div class="clear_dot"></div>
+                                    <div class="solution_desc">
+                                        로고를 상품에 적용하고<br>싶어요
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+    </div>
+    <section class="young" style="height:1500px;">
+    </section>
+    <section class="demo">
+					<div class="spacer s2"></div>
+					<div id="trigger" class="spacer s0"></div>
+					<div id="animate" class="box1 blue" style="opacity: 1;">
+						<p>Now you see me...</p>
+						<a href="#" class="viewsource">view source</a>
+					</div>
+					<div class="spacer s2"></div>
+    </section>
+     <div class="show-on-scroll">Hello</div>
+    <section class="young" style="height:1500px;">
+    </section>
+   
+  </body>
+					<script>
+						// init controller
+						var controller = new ScrollMagic.Controller();
+
+						// build scene
+						var scene = new ScrollMagic.Scene({triggerElement: "#trigger"})
+										// trigger a velocity opaticy animation
+										.setVelocity("#animate", {opacity: 0}, {duration: 400})
+										.addIndicators() // add indicators (requires plugin)
+										.addTo(controller);
+					</script>
+
+<script>
+    window.addEventListener('scroll', function() {
+  var el = document.querySelector('.show-on-scroll');
+  
+  if(window.scrollY >= 1700) el.classList.add('shown');
+  else el.classList.remove('shown');
+});</script>
+
+</html>
+
+
+

@@ -1,0 +1,133 @@
+   <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+<style>
+    #container{
+        position:relative;
+        width:106%;
+        height:100%;
+	  left: -20px;
+    }
+    .tab {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top:0
+    }
+    p {
+    margin: 0 0 20px;
+    }
+    .tablinks {
+    float: left;
+    width: 33%;
+    height: 100%;
+    /*border: ridge;*/
+    outline: none;
+    font-size: 15px;
+    /*font-weight: bold;*/
+    color: #000000;
+    background-color: #ffffff;
+    border-radius:0px;
+	border-collapse:separate;
+	  border-style: solid hidden solid solid;
+	}
+
+    .tablinks.active {	 
+	border-style: solid hidden solid solid;
+	border-collapse:separate;
+	border-radius:0px;
+    color: #ffffff;
+    background-color: #4f4f4f;
+    }
+    
+    .tabcont{
+    position: absolute;
+    top: 100px;
+    left: 6px;
+    width: 105%;
+    height: 100%;
+    } 
+   #more{
+    border: 1px solid #adadad;
+    background: #Ffffff;
+    border-color: #000000;
+    border-radius: 0px;
+    width: 120px;
+    height: 45px;
+    }
+    #s_left{
+        float: left; width: 32%; height: 700px;}
+    #s_right{ 
+        float: left; width: 65%; height: 100%;}
+    /*#s_r_top{
+        height: 49%;}*/
+    #top_image{
+      margin: 0 12px; width: 95%; padding: 0 30px;
+    }
+    #s_l_butt{
+	  padding: 30px 0 0 0;
+	}
+    #s_r_left{
+        float: left;  width: 44%; height:392px; background-color: #f7f7f7;
+        text-align: center;border-radius: 13px;margin: 12px;padding: 30px;}
+    #s_r_right{ 
+        float: left;  width: 44%; height:392px; background-color: #f7f7f7;
+        text-align: center;border-radius: 13px;margin:12px;padding:30px;}
+    #s_r_bottom{
+        float: inherit; height:200%; background-color: #f7f7f7; 
+        text-align: center;border-radius: 13px; margin: 12px; width:91%;
+        padding: 30px;}
+    .g_img {
+        margin: 5px;
+        float: left;
+        width: 215px;
+        height: 215px;
+    }
+    .g_img img {
+        width: 100%;
+        height: 100%;
+    }
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+    .g_img_1{
+        float: left;
+    }
+    .g_img_2{
+        float: left;
+    }
+    .g_img_3{
+        float: left;
+    }
+    
+    </style>
+  <script>
+  $(function(){var container='<div id="container"><div class="tab">' 
+       container+='<button class="tablinks active" onclick="openTab(event, \'tab1\')">1:1 온라인 컨설팅</button> <button class="tablinks" onclick="openTab(event, \'tab2\')">브랜드 네이밍</button> <button class="tablinks" onclick="openTab(event, \'tab3\')" style="border-style: solid;">브랜드 로고</button>'
+       container+='<div class="tabcont">' 
+       container+='<div id="tab1" class="tabcontent" style="display: block;">'
+       container+='<div id="s_left" ><div id "s_left_cont"><p style="font-size:18px">1:1 온라인 컨설팅</p><p style="font-size:48px; margin: -35px 0 0 0;">10만원 ~</p> <p style="font-size:14px">창업, 어디서부터 어떻게 시작해야 할지 막막하신가요?</br>창업 이후 성장 과정에서 풀리지 않는 문제들이 있나요?</br>&nbsp브랜드 전문가과 지금 바로 만나보세요.당신만을 위한 맞춤형 1:1 컨설팅을 통해 해답을 찾아드립니다.</p></div><div id="s_l_butt"><button id="more" onClick="location.href=\'https://www.abocado.kr/consulting-order\'">더 알아보기</button></div></div>'
+       container+='<div id="s_right" ><div id="s_r_top"><div id="s_r_left"><p style="text-align: center; font-size: 50px; margin: 1px;font-family: Catamaran;">"</p><p style="font-size:18px">조금 비싸게 느껴져 반신반의했지만, 지금은 알아요! 그만큼의 값어치가 있다는 걸. 온라인 대면을 통해 진행해, 바쁜 스케줄 속에서 즉각적인 소통으로 시간을 크게 절약했어요. </p><p style="font-size:14px">- 김지영 님 스여일삶  대표 -</p></div><div id="s_r_right"><p style="text-align: center; font-size: 50px; margin: 1px;font-family: Catamaran;">"</p><p style="font-size:18px">브랜드 미러를 통해 엉켜있던 사업 영역을 정리하고, 제 브랜드에 대해 다시 생각하며 사업 방향성의 실마리를 찾았어요. 시작 전에는 비싸다고 생각했는데 컨설팅 종류 후에는 말도 안되게 저렴한 가격이라는 것을 깨달았어요.</p><p style="font-size:14px">- 변태준 님 스탠스 아이웨어 대표 -</p></div></div><div id="s_r_bottom"><p style="text-align: center; font-size: 50px; margin: 1px;font-family:Catamaran;">"</p><p style="font-size:18px">처음엔 기술적인 연결 문제가 걱정되었는데, 머릿 속에 막연하던 사업 방향성과 접근법에 대한 조언을 집중하다보니 시간 가는 줄 몰랐습니다. 컨설팅이 아주 만족스러워서 곧 로고 개발을 주문하려해요.</p><p style="font-size:14px">- 김한필 님 도농공간활성관리소 대표 -</p></div></div></div>'
+       container+='<div id="tab2" class="tabcontent" style="display: none;">'
+       container+='<div id="s_left" ><div id "s_left_cont"><p style="font-size:18px">브랜드 네이밍</p><p style="font-size:48px; margin: -35px 0 0 0;">50만원 ~</p><p style="font-size:14px">브랜드의 시작, 브랜드 네이밍이 고민이신가요?</br>브랜드 네임도 브랜드 전문가의 손을 거치면 다릅니다.</br>제대로된 브랜드 네임개발 부터 정밀검색, 상표검색, 상표등록 및 출원까지 진행이 가능합니다.</p></div><div id="s_l_butt"><button id="more" onClick="location.href=\'https://www.abocado.kr/naming-order\'">더 알아보기</button></div></div>'
+        container+='<div id="s_right"><div id ="s_r_top"><img id="top_image" src="https://cdn.imweb.me/thumbnail/20190215/5c664e1c840a0.png"></div><div id ="s_r_bottom" style="float: inherit; height:200%; background-color: #ffffff; text-align: initial; border-radius: none; margin: 12px; width:95%;padding:0 30px;"><p style="font-size:18px">조금 비싸게 느껴져 반신반의했지만, 지금은 알아요! 그만큼의 값어치가 있다는 걸. 온라인 대면을 통해 진행해, 바쁜 스케줄 속에서 즉각적인 소통으로 시간을 크게 절약했어요. 사실 관련 고민을 마땅히 물어볼 곳도 없었는데,전문가 분들에게 1:1 맞춤형 컨설팅을 받고 속이 뻥 뚫렸습니다.<span style="font-size:14px"> - 김지영 님 스여일삶 스타트업 여성의 일과 삶 대표 -</span></p><p style="margin: 0 0 35px;"></p><p style="font-size:18px">브랜드 미러를 통해 엉켜있던 사업 영역을 정리하고, 제 브랜드에 대해 다시 생각하며 사업 방향성의 실마리를 찾았어요. 시작 전에는 비싸다고 생각했는데 컨설팅 종류 후에는 말도 안되게 저렴한 가격이라는 것을 깨달았어요. 얼른 전략 컨설팅과 온라인 컨설팅을 추가로 신청하려고요!<span style="font-size:14px"> - 변태준 님 스탠스 아이웨어 대표 -</span></p><p style="margin: 0 0 35px;"></p><p style="font-size:18px">처음엔 기술적인 연결 문제가 걱정되었는데, 머릿 속에 막연하던 사업 방향성과 접근법에 대한 조언을 집중하다보니 시간 가는 줄 몰랐습니다. 컨설팅이 아주 만족스러워서 곧 로고 개발을 주문하려해요.<span style="font-size:14px"> - 김한필 님 도농공간활성관리소 대표 -</span></p></div></div></div>'
+       container+='<div id="tab3" class="tabcontent" style="display: none;">'
+       container+='<div id="s_left" ><div id "s_left_cont"><p style="font-size:18px">브랜드 로고</p><p style="font-size:48px;margin: -35px 0 0 0;">84만원 ~</p><p style="font-size:14px">제대로 된 브랜드 로고가 필요하신가요?합리적인 가격으로 쉽고 빠르게 당신만의 브랜드 로고를 만들어 보세요.</br> 창업, 어디서부터 어떻게 시작해야 할지 막막하신가요?</br>창업 이후 성장 과정에서 풀리지 않는 문제들이 있나요?.</p></div> <div id="s_l_butt"> <button id="more" onClick="location.href=\'https://www.abocado.kr/logo-order\'">더 알아보기</button></div></div>'
+          container +=' <div id="s_right" style="margin: 0 12px; padding: 0 30px;"><div class="g_img_1"><div class="g_img"><a target="_blank" href="https://cdn.imweb.me/thumbnail/20190320/5c91f578c9a79.jpg"><img src="https://cdn.imweb.me/thumbnail/20190320/5c91f578c9a79.jpg" alt="design"></a></div><div class="g_img"><a target="_blank" href="https://cdn.imweb.me/thumbnail/20190320/5c91f593d5577.jpg"><img src="https://cdn.imweb.me/thumbnail/20190320/5c91f593d5577.jpg" alt="ddaom"></a></div><div class="g_img"><a target="_blank" href="https://cdn.imweb.me/thumbnail/20190320/5c91f7b7b8944.jpg"><img src="https://cdn.imweb.me/thumbnail/20190320/5c91f7b7b8944.jpg" alt="etica"></a></div></div><div class="g_img_2"><div class="g_img"><a target="_blank" href="https://cdn.imweb.me/thumbnail/20190319/5c90909e00319.jpg"><img src="https://cdn.imweb.me/thumbnail/20190319/5c90909e00319.jpg" alt="onthecode"></a></div><div class="g_img"><a target="_blank" href="https://cdn.imweb.me/thumbnail/20190320/5c91f6ebb21fe.jpg"><img src="https://cdn.imweb.me/thumbnail/20190320/5c91f6ebb21fe.jpg" alt="kdm"></a></div><div class="g_img"><a target="_blank" href="https://cdn.imweb.me/thumbnail/20190320/5c91f77640320.jpg"><img src="https://cdn.imweb.me/thumbnail/20190320/5c91f77640320.jpg" alt="EO"></a></div></div></div></div></div></div>'
+	   $('#padding_w201903265c99acc45526f').html($(container))})
+     </script>
+     <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+      }
+
+    </script>

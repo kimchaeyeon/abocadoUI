@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset=”UTF-8″>
+    </head>
+    <body>        
+        <div id="howtouse" class="howtouse">
+        <div class="content_wrapper">
+            <div class="content-mobile">
+            <div class="title">
+                타다 이용 방법
+            </div>
+            </div>
+            <div class="demo">
+            <div class="arrow left" onclick="screens.prev()">
+                <img class="desktop_tablet" src="/static/images/btn_lineup_left@4x.png">
+                <img class="mobile" src="/static/images/btn_lineup_left_on@4x.png">
+            </div>
+            <div class="screenshot">
+                <img class="frame desktop" src="/static/images/bg_howto_mockup@4x.png">
+                <img class="frame tablet_mobile" src="/static/images/bg_howto_mockup_mobile@4x.png">
+                <div id="screens" class="screens" style="overflow: hidden; box-sizing: border-box; touch-action: pan-y; user-select: none; -webkit-user-drag: none;">
+                
+                
+                
+                
+                <div class="eg-flick-container" style="position: relative; z-index: 2000; width: 100%; height: 100%; top: 0px; transform: translate(-168px, 0px); will-change: transform;"><div class="eg-flick-panel" style="position: absolute; width: 168px; height: 100%; box-sizing: border-box; top: 0px; left: 0px; transform: translate(300%, 0px); will-change: transform;">
+                    <img class="screen" src="/static/images/bg_howto_1_mobile@3x.jpg">
+                </div><div class="eg-flick-panel" style="position: absolute; width: 168px; height: 100%; box-sizing: border-box; top: 0px; left: 0px; transform: translate(0%, 0px); will-change: transform;">
+                    <img class="screen" src="/static/images/bg_howto_2_mobile@3x.jpg">
+                </div><div class="eg-flick-panel" style="position: absolute; width: 168px; height: 100%; box-sizing: border-box; top: 0px; left: 0px; transform: translate(100%, 0px); will-change: transform;">
+                    <img class="screen" src="/static/images/bg_howto_3_mobile@3x.jpg">
+                </div><div class="eg-flick-panel" style="position: absolute; width: 168px; height: 100%; box-sizing: border-box; top: 0px; left: 0px; transform: translate(200%, 0px); will-change: transform;">
+                    <img class="screen" src="/static/images/bg_howto_4_mobile@3x.jpg">
+                </div></div></div>
+            </div>
+            <div class="arrow right" onclick="screens.next()">
+                <img class="desktop_tablet" src="/static/images/btn_lineup_right@4x.png">
+                <img class="mobile" src="/static/images/btn_lineup_right_on@4x.png">
+            </div>
+            <div class="indicator">
+                <div class="dot flick flick0"></div>
+                <div class="dot flick flick1"></div>
+                <div class="dot flick flick2 selected"></div>
+                <div class="dot flick flick3"></div>
+            </div>
+            </div>
+            <div class="content">
+            <div class="title" id="animation4Title">
+                타다 이용 방법
+            </div>
+            <div class="line" id="animation4Line"></div>
+            <div class="func_title flick flick0" id="animation4Text">회원가입</div>
+            <div class="func_title flick flick1">예상금액 확인</div>
+            <div class="func_title flick flick2 selected">탑승 확인</div>
+            <div class="func_title flick flick3">결제 완료</div>
+            <div class="func_description flick flick0" id="animation4Description">
+                휴대폰 번호로 간편하게 가입한 후,<br>
+                결제 카드 정보를 입력해주세요.
+            </div>
+            <div class="func_description flick flick1">
+                원하는 목적지를 입력하고 예상 금액 확인 후,<br>
+                차량을 호출하세요.
+            </div>
+            <div class="func_description flick flick2 selected">
+                탑승 알림이 오면 호출한 타다 차량에 탑승하시고<br>마음 편히 이동하세요.
+            </div>
+            <div class="func_description flick flick3">
+                하차 후 입력하신 카드 정보로 자동 결제되며,<br>
+                탑승하신 차량의 기사를 평가할 수 있어요.
+            </div>
+            </div>
+        </div>
+        </div>
+    </body>
+    
+    <script>
+    var screens = null;
+    function hideBtnMenu() {
+        var menuItems = $("#menu_items");
+        menuItems.hide();
+        updateBtnMenu();
+    }
+    function updateBtnMenu() {
+        var menuItems = $("#menu_items");
+        var btnMenuImg = $("#btn_menu img");
+        if(!menuItems.is(':visible')) {
+        btnMenuImg.attr("src", "/static/images/btn_menu@4x.png");
+        } else {
+        btnMenuImg.attr("src", "/static/images/btn_menu_exit@4x.png");
+        }
+    }
+    function installFlicker() {
+        if (screens) {
+        screens.destroy();
+        screens = null;
+        }
+        screens = new eg.Flicking("#screens", {
+        duration: 300,
+        circular: true,
+        threshold: 70
+        }).on({
+        flickEnd: onFlickEnd
+        });
+        hideBtnMenu()
+    }
+    function onFlickEnd(e) {
+        var cls = '.flick' + e.no;
+        $('.flick').removeClass('selected');
+        $(cls).addClass('selected');
+    }
+    var prevScrollPos = window.pageYOffset;
+    $(window).scroll(function(){
+        var currentScrollPos = window.pageYOffset;
+        var menu = document.getElementById("menu");
+        if (currentScrollPos > 80) {
+        menu.style.visibility = "visible"
+        }
+        if (currentScrollPos < 80) {
+        menu.style.opacity = "1";
+        menu.style.top = "0";
+        } else if (prevScrollPos > currentScrollPos) {
+        menu.style.opacity = "1";
+        menu.style.top = "0";
+        } else {
+        menu.style.opacity = "1";
+        menu.style.top = "-80px";
+        }
+        prevScrollPos = currentScrollPos;
+        loadAnimation(currentScrollPos);
+    });
+    function onMediaQueryMatchChanged(x) {
+        installFlicker();
+        hideBtnMenu();
+    }
+    $('.selector .item').click(function(e) {
+        var classList = $(e.target).parent().attr('class').split(/\s+/);
+        classList = classList.concat($(e.target).attr('class').split(/\s+/));
+        classList = classList.filter(function(v){ return v.indexOf('data-tada-') === 0 });
+        $('.data-tada').removeClass('selected');
+        $('.' + classList[0]).addClass('selected');
+    });
+    $('#btn_menu').click(function(){ 
+        var menuItems = $("#menu_items");
+        if(!menuItems.is(':visible')) {
+        menuItems.show();
+        } else {
+        menuItems.hide();
+        }
+        updateBtnMenu();
+    });
+    installFlicker();
+    var x = window.matchMedia("screen and (max-width: 1280px)");
+    x.addListener(onMediaQueryMatchChanged);
+    var y = window.matchMedia("screen and (max-width: 767px)");
+    y.addListener(onMediaQueryMatchChanged);
+
+    /* Movie video */
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player1;
+    function onYouTubeIframeAPIReady() {
+        player1 = new YT.Player('player1', {
+            width: '100%',
+            height: '100%',
+            videoId: 'PuOcC1PJKWU',
+            playerVars: {
+                'rel': 0,
+                'showinfo': 0
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange,
+                'onError': onPlayerError
+            }
+
+        });
+    }
+    var isReady = false;
+    function onPlayerReady(event) {
+        isReady = true;
+    }
+    function onPlayerStateChange(event) {
+        if(event.data === YT.PlayerState.ENDED) {
+            closeMovie();
+        }
+    }
+    function onPlayerError(event) {
+        closeMovie();
+    }
+    function showMovie() {
+        if (!isReady) {
+            return;
+        }
+        $("#movieWrapper").show();
+        player1.playVideo();
+    }
+    function closeMovie() {
+        $("#movieWrapper").hide();
+        player1.stopVideo();
+    }
+    loadAnimation(0);
+    function loadAnimation(scrollPosition) {
+        var bodyElem = $('body');
+        if (window.innerHeight <= 1000) {
+            if (scrollPosition > 20) {
+                bodyElem.addClass('animating1');
+            }
+        } else {
+            setTimeout(function() {
+                bodyElem.addClass('animating1');
+            }, 300);
+        }
+        if (scrollPosition > 580) {
+            bodyElem.addClass('animating2');
+        }
+        if (scrollPosition > 1600) {
+            bodyElem.addClass('animating3');
+        }
+        if (scrollPosition > 2660) {
+            bodyElem.addClass('animating4');
+        }
+        if (scrollPosition > 3700) {
+            bodyElem.addClass('animating5');
+        }
+    }
+    $(window).on('hashchange',function(){
+        hideBtnMenu();
+    });
+</script>
+    </html>   
