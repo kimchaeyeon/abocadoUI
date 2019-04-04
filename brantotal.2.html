@@ -19,7 +19,31 @@
     top: 0px;
     border-radius: 290px;
    }
-   .solution_list{  
+     .solution_list1{  
+     max-height:100%;
+     opacity:0;
+     list-style: none;  
+     float: left;
+     margin-left: -25px;
+     margin-top: 30px;
+   }
+      .solution_list2{  
+     max-height:100%;
+     opacity:0;
+     list-style: none;  
+     float: left;
+     margin-left: -25px;
+     margin-top: 30px;
+   }
+      .solution_list3{  
+     max-height:100%;
+     opacity:0;
+     list-style: none;  
+     float: left;
+     margin-left: -25px;
+     margin-top: 30px;
+   }
+      .solution_list4{  
      max-height:100%;
      opacity:0;
      list-style: none;  
@@ -72,7 +96,7 @@
     <div class="solution_area">
                         <div class="solution_all" style="opacity: 1;"><span>abocado</br>브랜드 토탈 솔루션</span></div>
                             <ul class="list_area fclear">
-                                <li class="solution_list">
+                                <li class="solution_list1">
                                     <div class="circle_area" style="background-color:#4891e7; opacity: 0.85;">
                                         <div class="circle_inner">
                                             <div class="solution_name">브랜드 컨설팅</div>
@@ -86,7 +110,7 @@
                                         브랜드, 사업에 대한<br>해답을 찾고 싶어요
                                     </div>
                                 </li>
-                                <li class="solution_list">
+                                <li class="solution_list2">
                                     <div class="circle_area" style="background-color: #fc9f9f; opacity: 0.85;">
                                         <div class="circle_inner">
                                             <div class="solution_name">브랜드 네이밍</div>
@@ -100,7 +124,7 @@
                                         사업에 꼭 맞는 브랜드<br>이름이 필요해요
                                     </div>
                                 </li>
-                                <li class="solution_list">
+                                <li class="solution_list3">
                                     <div class="circle_area" style="background-color: #00cf7f; opacity: 0.85;">
                                         <div class="circle_inner">
                                             <div class="solution_name">브랜드 로고</div>
@@ -114,7 +138,7 @@
                                         브랜드 로고를 디자인 하고<br>싶어요
                                     </div>
                                 </li>
-                                <li class="solution_list">
+                                <li class="solution_list4">
                                     <div class="circle_area" style="background-color:saddlebrown; opacity: 0.85;">
                                         <div class="circle_inner">
                                             <div class="solution_name">맞춤형 디자인</div>
@@ -133,29 +157,33 @@
     </div>
   </body>
 <script>
+
+
 $(document).ready(function() {
     
-    /* Every time the window is scrolled ... */
-    $(window).scroll( function(){
     
-        /* Check the location of each desired element */
-        $('.solution_list').each( function(i){
-            
+var scrollevt = function (i) {
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
             
             /* If the object is completely visible in the window, fade it it */
             if( bottom_of_window > bottom_of_object ){
-                
                 $(this).animate({'opacity':'1','margin-top':'0px'},2000);
-                    
-            }
-            
-        });
-    
-    });
-    
-});
+            };    
+};
+
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+        /* Check the location of each desired element */
+        $(".solution_list1").scrollevt().queue(function() {    
+        $(".solution_list2").scrollevt().queue(function() {        
+         $(".solution_list3").scrollevt().queue(function() {        
+          $(".solution_list4").scrollevt();
+                 });
+              });
+           });
+         });
+       });
 </script>
 </html>
 
