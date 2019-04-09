@@ -4,6 +4,8 @@
   <meta charset=”UTF-8″>
   </head>
   <body>
+   <div id="floatdiv">zzzzzzzzzzzzzzzzzz</div>
+
     <div id="container">
       <div class="tab">
         <button class="tablinks active" onclick="openTab(event, 'tab1')">1:1 온라인 컨설팅</button><button class="tablinks" onclick="openTab(event, 'tab2')">브랜드 네이밍</button><button class="tablinks" onclick="openTab(event, 'tab3')" style="border-style: solid;">브랜드 로고</button>
@@ -255,7 +257,7 @@
     .g_img_3{
         float: left;
     }
-    
+    #floatdiv { position:fixed; width:175px; display:inline-block; right:0px; /* 창에서 오른쪽 길이 */ top:94%; /* 창에서 위에서 부터의 높이 */ background-color: transparent; margin:0; z-index:100; } 
     </style>
     <script>
     function openTab(evt, tabName) {

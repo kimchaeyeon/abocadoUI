@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset=”UTF-8″>
+ <script type="text/javascript" src="C:\Users\kimchaeyeon\projects\js\jquery-3.3.1.js"></script>
+  </head>
+ <!-- 팝업 광고 닫기 시작 -->
+ <script>
+  function floating_close(divid) {
+             var strObj = document.getElementById(divid);
+             strObj.style.display = "none";
+   }
+  </script>
+  
+<!-- style.css에 들어갈 소스-->
+ <style>
+   .fixed-top
+   {position:fixed;bottom:auto; top:50px;margin-left: -142px;}
+
+   * html.fixed-top{
+       position:absolute;
+       bottom:auto;
+       top:expression(eval(document.documentElement.scrollTop+50));}
+ </style> 
+  <!--  팝업 광고 닫기 끝 -->
+  <body>
+<!-- 스크롤 팝업 배너 시작 -->
+  <div class="fixed-top" >
+  <div id="fixed-top">
+   <table border="0" cellpadding="10" cellspacing="0" bgcolor="#000000">
+    <tr>
+     <td align="center" >
+
+      <!--광고소스 또는 배너 이미지 소스 (예 : 리얼센스 스크립트)-->
+
+      </td>
+    </tr>
+    <tr>
+   <td height="10" align="center" style="background-color:#000000;color:black;"><a href="javascript:floating_close('fixed-top');" style="color:#FFFFFF; text-decoration:none; font-size:12px;"><strong>[닫기]</strong></a></td>
+   </tr>
+  </table>
+  </div></div>
+<!-- 좌측 스크롤 팝업 배너 끝-->
+  </body>
+
+</html>

@@ -3,6 +3,9 @@
   <head>
   <meta charset=”UTF-8″>
  <script type="text/javascript" src="C:\Users\kimchaeyeon\projects\js\jquery-3.3.1.js"></script>
+   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">   
+   <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet"> 
+   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
   </head>
    <style>
    .solution_area{
@@ -92,11 +95,11 @@
     }
   </style>
   <body>
-
+    <button>알려주세요</button>
     <div class="solution_area">
                         <div class="solution_all" style="opacity: 1;"><span>abocado</br>브랜드 토탈 솔루션</span></div>
                             <ul class="list_area fclear">
-                                <li class="solution_list1">
+                                <li class="solution_list1" data-aos="fade-right">
                                     <div class="circle_area" style="background-color:#4891e7; opacity: 0.85;">
                                         <div class="circle_inner">
                                             <div class="solution_name">브랜드 컨설팅</div>
@@ -111,7 +114,7 @@
                                     </div>
                                     
                                 </li>
-                                <li class="solution_list2">
+                                <li class="solution_list2" data-aos="fade-up">
                                     <div class="circle_area" style="background-color: #fc9f9f; opacity: 0.85;">
                                         <div class="circle_inner">
                                             <div class="solution_name">브랜드 네이밍</div>
@@ -161,7 +164,11 @@
 
 
 $(document).ready(function() {
-    
+       $("button").on("click", function(){
+            var left = $(".solution_list2").scrollLeft();
+            var top = $(".solution_list2").scrollTop();
+            $("span").text("Left:" + left + ", Top" + top);
+            });
     /* Every time the window is scrolled ... */
     $(window).scroll( function(event){
         /* Check the location of each desired element */
@@ -175,8 +182,11 @@ $(document).ready(function() {
                 $(this).animate({'opacity':'1','margin-top':'0px'},600);       
             }
         }).queue(function() {    
+            var px=300;
         $(".solution_list2").each( function(i){
+            if( bottom_of_window > px ){
                 $(this).animate({'opacity':'1','margin-top':'0px'},600);
+            }
         }).queue(function() {        
          $(".solution_list3").each( function(i){
                 $(this).animate({'opacity':'1','margin-top':'0px'},600);
@@ -190,7 +200,15 @@ $(document).ready(function() {
          });
        });
 </script>
+<script> 
+    AOS.init({ 
+   easing: 'ease-out-back', 
+   duration: 1300, 
+   opacity:1        })  
+ </script> 
 </html>
+
+
 
 
 
